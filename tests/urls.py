@@ -13,6 +13,9 @@ router.register(
     "nested-comments", views.NestedCommentViewSet, base_name="nested-comment")
 router.register(
     "nested-posts", views.NestedPostViewSet, base_name="nested-post")
+router.register(
+    "nested-max-posts", views.NestedMaxPostViewSet,
+    base_name="nested-max-post")
 router.register("pk-comments", views.PkCommentViewSet, base_name="pk-comment")
 router.register(
     "people-full", views.MaximalPersonViewSet, base_name="people-full")

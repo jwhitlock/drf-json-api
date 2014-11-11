@@ -413,9 +413,9 @@ class JsonApiMixin(object):
         for item in items:
             converted = self.convert_resource(item, request)
             linked_obj = converted["data"]
-            linked_ids = converted.pop("linked_ids", {})
-            if linked_ids:
-                linked_obj["links"] = linked_ids
+            converted_ids = converted.pop("linked_ids", {})
+            if converted_ids:
+                linked_obj["links"] = converted_ids
             obj_ids.append(converted["data"]["id"])
 
             field_links = self.prepend_links_with_name(
