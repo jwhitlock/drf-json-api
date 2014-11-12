@@ -380,6 +380,9 @@ class JsonApiMixin(object):
         changed_links = links.copy()
 
         for link_name, link_obj in six.iteritems(links):
+            if '.' in link_name:
+                # Link was already prepended with a resource name
+                continue
             prepended_name = "%s.%s" % (name, link_name)
             link_template = "{%s}" % link_name
             prepended_template = "{%s}" % prepended_name

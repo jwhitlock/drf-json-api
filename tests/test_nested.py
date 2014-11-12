@@ -129,8 +129,8 @@ def test_multiple_linked_with_links(client):
                 "href": "http://testserver/comments/{posts.comments}/",
                 "type": "comments",
             },
-            "posts.comments.post": {
-                "href": "http://testserver/posts/{posts.comments.post}/",
+            "comments.post": {
+                "href": "http://testserver/posts/{comments.post}/",
                 "type": "posts",
             },
         },
